@@ -7,7 +7,13 @@ from Backend.schemas import HouseInput,SimilarPropertyRequest
 from Backend.ml_model import model, encoders, scaler
 from Backend.database import engine
 
+from fastapi import FastAPI
+
 app = FastAPI()
+
+@app.get("/api")
+def home():
+    return {"message": "Real Estate API is running"}
 
 
 @app.get("/")
